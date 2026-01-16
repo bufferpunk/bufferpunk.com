@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buffer Punk - Portfolio showcasing creative projects and expertise">
+    <meta name="author" content="Buffer Punk">
+    <title>Buffer Punk - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">Buffer<span class="highlight">Punk</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Welcome to <span class="highlight">Buffer Punk</span>
+                </h1>
+                <p class="hero-subtitle">Creative Development & Digital Innovation</p>
+                <p class="hero-description">
+                    We build innovative digital experiences with a punk rock attitude
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Our Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                    </div>
+                    <pre class="code-content"><code><span class="code-keyword">const</span> organization = {
+  <span class="code-property">name</span>: <span class="code-string">"Buffer Punk"</span>,
+  <span class="code-property">mission</span>: <span class="code-string">"building cool stuff"</span>,
+  <span class="code-property">approach</span>: <span class="code-string">"rebel with a cause"</span>
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        We're an organization that believes in breaking the mold and creating something unique.
+                    </p>
+                    <p>
+                        With a passion for innovative solutions and clean code, we approach every project 
+                        with creativity and technical expertise. Our work combines solid engineering principles 
+                        with a rebellious spirit that challenges conventions.
+                    </p>
+                    <p>
+                        Whether it's crafting elegant user interfaces, optimizing backend systems, or 
+                        experimenting with cutting-edge technologies, we're always pushing boundaries and 
+                        learning something new.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Punk Attitude</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frontend</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">JavaScript/TypeScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">React/Vue</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Backend</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Databases</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">DevOps</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Git/GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 78%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">CI/CD</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A full-stack e-commerce solution with real-time inventory management, 
+                        secure payment processing, and an intuitive admin dashboard.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Task Management App</h3>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">PWA</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A progressive web app for team collaboration with real-time updates, 
+                        drag-and-drop functionality, and offline support.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <div class="project-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Interactive data visualization dashboard with customizable widgets, 
+                        real-time data streaming, and export capabilities.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Social Media API</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        RESTful API with authentication, rate limiting, and comprehensive 
+                        documentation. Built for scalability and performance.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-lead">
+                        Have a project in mind or just want to chat? We'd love to hear from you!
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:hello@bufferpunk.com">hello@bufferpunk.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">🐙</div>
+                            <div class="contact-details">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/bufferpunk" target="_blank">@bufferpunk</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <a href="#" target="_blank">Connect with us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear">2026</span> Buffer Punk. Built with passion and punk rock attitude.</p>
+                <div class="social-links">
+                    <a href="https://github.com/bufferpunk" target="_blank" aria-label="GitHub">GitHub</a>
+                    <a href="#" target="_blank" aria-label="Twitter">Twitter</a>
+                    <a href="#" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
