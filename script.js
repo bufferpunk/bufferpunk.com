@@ -1,0 +1,222 @@
+// ============================
+// Navigation Functionality
+// ============================
+
+const navbar = document.getElementById('navbar');
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Sticky navbar on scroll
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Mobile menu toggle
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+});
+
+// Close mobile menu when clicking a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for navigation links
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            const offsetTop = targetSection.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ============================
+// Active Navigation Link
+// ============================
+
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollPosition = window.pageYOffset + 150;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+
+// ============================
+// Skill Bar Animation
+// ============================
+
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    const skillsSection = document.getElementById('skills');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
+}
+
+animateSkillBars();
+
+// ============================
+// Fade In Animation on Scroll
+// ============================
+
+function fadeInElements() {
+    const elements = document.querySelectorAll('.project-card, .skill-category, .stat-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+fadeInElements();
+
+// ============================
+// Contact Form Handling
+// ============================
+
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Basic validation
+    if (!name || !email || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
+    
+    // Simulate form submission
+    console.log('Form submitted:', { name, email, message });
+    
+    // Show success message
+    alert('Thank you for your message! I\'ll get back to you soon.');
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// ============================
+// Dynamic Year in Footer
+// ============================
+
+function updateFooterYear() {
+    const footer = document.querySelector('.footer-content p');
+    if (footer) {
+        const currentYear = new Date().getFullYear();
+        footer.textContent = `© ${currentYear} Buffer Punk. Built with passion and punk rock attitude.`;
+    }
+}
+
+updateFooterYear();
+
+// ============================
+// Keyboard Navigation
+// ============================
+
+document.addEventListener('keydown', (e) => {
+    // Close mobile menu on Escape key
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+    }
+});
+
+// ============================
+// Performance: Reduce Motion
+// ============================
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (prefersReducedMotion.matches) {
+    // Disable animations for users who prefer reduced motion
+    document.documentElement.style.scrollBehavior = 'auto';
+}
+
+// ============================
+// Loading Animation
+// ============================
+
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// ============================
+// Console Easter Egg
+// ============================
+
+console.log('%c🎸 Buffer Punk Portfolio 🎸', 'color: #ff2d55; font-size: 24px; font-weight: bold;');
+console.log('%cLike what you see? Let\'s build something awesome together!', 'color: #00d9ff; font-size: 14px;');
+console.log('%cEmail: hello@bufferpunk.com', 'color: #a1a1aa; font-size: 12px;');
