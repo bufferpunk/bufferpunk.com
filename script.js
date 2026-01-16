@@ -137,8 +137,31 @@ fadeInElements();
 
 const contactForm = document.getElementById('contactForm');
 
+// Create message container for form feedback
+const createMessageElement = (type, text) => {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-message form-message-${type}`;
+    messageDiv.textContent = text;
+    messageDiv.style.cssText = `
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        animation: fadeInUp 0.3s ease-out;
+        background-color: ${type === 'success' ? 'rgba(39, 201, 63, 0.1)' : 'rgba(255, 45, 85, 0.1)'};
+        border: 1px solid ${type === 'success' ? '#27c93f' : '#ff2d55'};
+        color: ${type === 'success' ? '#27c93f' : '#ff2d55'};
+    `;
+    return messageDiv;
+};
+
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    
+    // Remove any existing messages
+    const existingMessage = contactForm.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
     
     // Get form values
     const name = document.getElementById('name').value;
@@ -147,14 +170,16 @@ contactForm.addEventListener('submit', (e) => {
     
     // Basic validation
     if (!name || !email || !message) {
-        alert('Please fill in all fields');
+        const errorMessage = createMessageElement('error', 'Please fill in all fields');
+        contactForm.appendChild(errorMessage);
         return;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
+        const errorMessage = createMessageElement('error', 'Please enter a valid email address');
+        contactForm.appendChild(errorMessage);
         return;
     }
     
@@ -162,10 +187,16 @@ contactForm.addEventListener('submit', (e) => {
     console.log('Form submitted:', { name, email, message });
     
     // Show success message
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    const successMessage = createMessageElement('success', 'Thank you for your message! I\'ll get back to you soon.');
+    contactForm.appendChild(successMessage);
     
     // Reset form
     contactForm.reset();
+    
+    // Remove success message after 5 seconds
+    setTimeout(() => {
+        successMessage.remove();
+    }, 5000);
 });
 
 // ============================
