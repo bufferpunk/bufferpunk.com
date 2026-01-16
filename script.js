@@ -8,7 +8,6 @@ const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Sticky navbar on scroll
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
@@ -17,8 +16,6 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-    
-    lastScroll = currentScroll;
 });
 
 // Mobile menu toggle
@@ -90,10 +87,10 @@ function animateSkillBars() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 skillBars.forEach(bar => {
-                    const width = bar.style.width;
+                    const targetWidth = bar.style.width;
                     bar.style.width = '0';
                     setTimeout(() => {
-                        bar.style.width = width;
+                        bar.style.width = targetWidth;
                     }, 100);
                 });
                 observer.unobserve(entry.target);
@@ -204,10 +201,10 @@ contactForm.addEventListener('submit', (e) => {
 // ============================
 
 function updateFooterYear() {
-    const footer = document.querySelector('.footer-content p');
-    if (footer) {
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
         const currentYear = new Date().getFullYear();
-        footer.textContent = `© ${currentYear} Buffer Punk. Built with passion and punk rock attitude.`;
+        yearSpan.textContent = currentYear;
     }
 }
 
